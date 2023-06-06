@@ -1,6 +1,6 @@
 :root {
     --primary: #11999E;
-    --secondary: #81DD90;
+    --secondary: #00CED1;
     --success: #28a745;
     --danger: #dc3545;
     --warning: #fd7e14;
@@ -17,7 +17,7 @@
     --bs-btn-bg: var(--primary);
     --bs-btn-border-color: var(--primary);
     --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #ffc697;
+    --bs-btn-hover-bg: #47b3b6;
     --bs-btn-hover-border-color: var(--secondary);
     --bs-btn-focus-shadow-rgb: 49,132,253;
     --bs-btn-active-color: #fff;
