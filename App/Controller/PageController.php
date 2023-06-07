@@ -6,21 +6,29 @@ Class PageController extends Controller
 {
     public function route(): void
     {
-        if (isset($_GET['action'])){
-            switch ($_GET['action']){
-                case 'about':
-                    //On appelle la méthode about()
-                    $this->about();
-                    break;
-                case 'home':
-                    //charge controller homme
-                    break;
-                default:
-                    //erreur
-                    break;        
+        try {
+
+            if (isset($_GET['action'])){
+                switch ($_GET['action']){
+                    case 'about':
+                        //On appelle la méthode about()
+                        $this->about();
+                        break;
+                    case 'home':
+                        //charge controller homme
+                        $this->home();
+                        break;
+                    default:
+                        throw new \Exception("Cette action n'existe pas : ".$_GET['action']);
+                        break;        
+                }
+            }else{
+                throw new \Exception("Aucune action détectée");
             }
-        }else{
-            //charger la page d'accueil
+        }catch (\Exception $e){
+            $this->render('errors/default', [
+                'error' => $e->getMessage()
+            ]); 
         }
     }
 
@@ -43,4 +51,12 @@ Class PageController extends Controller
         
         */
     }
+
+    protected function home()
+    {
+        $this->render('page/home', [
+            
+        ]);
+    }
+
 }
