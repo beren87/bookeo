@@ -32,6 +32,10 @@ Class PageController extends Controller
         }
     }
 
+    /*
+        Exemple d'appel depuis l'url
+        ?controller=page&action=about
+    */
     protected function about()
     {
         $params = [
@@ -52,6 +56,10 @@ Class PageController extends Controller
         */
     }
 
+    /*
+        Exemple d'appel depuis l'url
+        ?controller=page&action=home
+    */
     protected function home()
     {
         $this->render('page/home', [
